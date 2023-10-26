@@ -4,14 +4,15 @@ import java.util.Arrays;
 
 public class MyClass {
     public static void main(String[] args) {
-        System.out.println("aloha");
+        RandomTable randomTable = new RandomTable();
         System.out.println("first task");
-        int[] firstTable = {1, 3, 2, 7, 6, 0};
-        int[] secondTable = {1, 3, 2, 7, 6, 0};
+        int[] firstTable = {11, 60, 19, 30, 39, 41, 72, 59, 65, 77};
 
         FirstHomework firstHomework = new FirstHomework();
         firstHomework.bubbleSort(firstTable);
         System.out.println(Arrays.toString(firstTable));
-        System.out.println(Arrays.toString(firstHomework.bubbleSort(secondTable)));
+        int[] newTable = randomTable.createTable(10);
+        System.out.println(Arrays.toString(newTable));
+        System.out.println(Arrays.toString(firstHomework.bubbleSort(newTable)));
     }
 }

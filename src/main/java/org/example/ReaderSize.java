@@ -6,7 +6,7 @@ public class ReaderSize {
     public int readSizeOfArray() {
         Scanner sc = new Scanner(System.in);
         if (!sc.hasNextInt()) {
-            System.out.println("Value is not a number or is less than 2, please try again");
+            System.out.println("Value is not a number, please try again");
             return readSizeOfArray();
         }
         int size = sc.nextInt();

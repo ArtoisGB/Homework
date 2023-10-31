@@ -10,7 +10,7 @@ public class Introduction {
         System.out.println(GREETINGS);
         String fly = CountryCode.BE.codeLabel;
         Scanner sc = new Scanner(System.in);
-        CountryCode cc = CountryCode.valueOf(sc.next());
+        //  CountryCode cc = CountryCode.valueOf(sc.next());
         //      switch (cc.codeLabel) {
         switch (fly) {
             case "Belgium":

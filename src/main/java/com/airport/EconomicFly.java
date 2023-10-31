@@ -7,4 +7,12 @@ public class EconomicFly extends Fly {
         super(cost);
         this.economicFly = ECONOMIC_FLY;
     }
+
+    public String getEconomicFly() {
+        return economicFly;
+    }
+
+    public void setEconomicFly(String economicFly) {
+        this.economicFly = economicFly;
+    }
 }

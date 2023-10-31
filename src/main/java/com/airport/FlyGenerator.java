@@ -2,14 +2,14 @@ package com.airport;
 
 public class FlyGenerator {
     private CountryCode code;
-    private String typeOfFlight;
+    private Fly typeOfFlight;
 
-    public FlyGenerator(CountryCode c, String t) {
+    public FlyGenerator(CountryCode c, Fly t) {
         this.code = c;
         this.typeOfFlight = t;
     }
 
-    public String getTypeOfString() {
+    public Fly getTypeOfString() {
         return typeOfFlight;
     }
 
@@ -17,13 +17,11 @@ public class FlyGenerator {
         return code;
     }
 
-    public void setTypeOfString(String typeOfFlight) {
+    public void setTypeOfString(Fly typeOfFlight) {
         this.typeOfFlight = typeOfFlight;
     }
 
     public void setCode(CountryCode code) {
         this.code = code;
     }
-
-
 }

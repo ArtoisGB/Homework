@@ -7,4 +7,12 @@ public class ExpensiveFly extends Fly {
         super(cost);
         this.expFly = expFly;
     }
+
+    public String getExpFly() {
+        return expFly;
+    }
+
+    public void setExpFly(String expFly) {
+        this.expFly = expFly;
+    }
 }

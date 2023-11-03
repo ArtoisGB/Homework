@@ -28,12 +28,15 @@ public class Connections {
         newList = countryArray.getListConnections();
         namesToCheck = countryArray.getListNames();
         startPoint = newList.get(positionOnList(countryStart));
+        System.out.println("StartPoint has connection to " + Arrays.asList(startPoint));
         desirePoint = newList.get(positionOnList(countryExit));
+        System.out.println("DesirePoint has connection to " + Arrays.asList(desirePoint));
 
-        if (checkStraightFly(desirePoint, countryExit)) {
-            System.out.println("We can provide fly");
-        } else if (checkFlyWithOneStop() == true) {
 
+        if (checkStraightFly(startPoint, countryExit)) {
+            System.out.println("We can provide fly to " + countryExit);
+        } else if (checkFlyWithOneStop(countryStart, countryExit)) {
+            System.out.println("We can provide a fly but with a stop in one country");
         } else {
             System.out.println("We can't provide fly!!");
         }
@@ -47,9 +50,22 @@ public class Connections {
         return status;
     }
 
-    public boolean checkFlyWithOneStop() {
+    public boolean checkFlyWithOneStop(String removeOne, String removeTwo) {
         boolean status = false;
-        if()
+        List<String[]> checkStop = newList;
+        String[] toCheck = startPoint;
+        String country = "";
+        checkStop.remove(positionOnList(removeOne));
+        for (int i = 0; i < toCheck.length - 1; i++) {
+            country = toCheck[i];
+            for (int j = 0; j < checkStop.size() - 1; j++) {
+                String[] middle = checkStop.get(j);
+                if (Arrays.asList(middle).contains(removeTwo)) {
+                    return true;
+                }
+            }
+        }
+        System.out.println("We found fly with stop in" + country);
         return status;
     }
 }

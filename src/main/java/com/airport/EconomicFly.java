@@ -17,8 +17,8 @@ public class EconomicFly extends Fly {
     }
 
     @Override
-    public void doSmth() {
-        super.doSmth();
+    public void introduceMenu() {
+        super.introduceMenu();
         System.out.println("Dinner and tea");
     }
 }

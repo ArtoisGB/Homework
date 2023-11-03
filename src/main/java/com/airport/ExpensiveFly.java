@@ -17,8 +17,8 @@ public class ExpensiveFly extends Fly {
     }
 
     @Override
-    public void doSmth() {
-        super.doSmth();
+    public void introduceMenu() {
+        super.introduceMenu();
         System.out.println("Big size dinner, to choose tea or coffee and snacks");
     }
 }

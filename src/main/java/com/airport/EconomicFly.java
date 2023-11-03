@@ -15,4 +15,10 @@ public class EconomicFly extends Fly {
     public void setEconomicFly(String economicFly) {
         this.economicFly = economicFly;
     }
+
+    @Override
+    public void doSmth() {
+        super.doSmth();
+        System.out.println("Dinner and tea");
+    }
 }

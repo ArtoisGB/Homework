@@ -15,4 +15,10 @@ public class ExpensiveFly extends Fly {
     public void setExpFly(String expFly) {
         this.expFly = expFly;
     }
+
+    @Override
+    public void doSmth() {
+        super.doSmth();
+        System.out.println("Big size dinner, to choose tea or coffee and snacks");
+    }
 }

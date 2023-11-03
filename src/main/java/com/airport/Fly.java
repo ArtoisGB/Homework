@@ -14,4 +14,8 @@ public class Fly {
     public void setCost(int cost) {
         this.cost = cost;
     }
+
+    public void doSmth() {
+        System.out.println("We can offer to eat on fly:");
+    }
 }

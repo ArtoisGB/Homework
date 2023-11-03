@@ -10,15 +10,17 @@ public class Introduction {
         System.out.println(GREETINGS);
         String fly = CountryCode.BELGIUM.codeLabel;
         String exitPoint = CountryCode.POLAND.codeLabel;
+
         // Scanner sc = new Scanner(System.in);
         //  CountryCode cc = CountryCode.valueOf(sc.next());
         //      switch (cc.codeLabel) {
-        switch ("Belgium") {
+        switch (fly) {
             case "Belgium":
                 System.out.println("Let's check fly to Belgium");
                 System.out.println("We will start from Poland");
                 //Belgium has value 1 and Poland 0
-                connections.getStartPoint("Belgium", "Poland");
+                connections.getStartPoint(fly, exitPoint);
+
                 break;
             case "Poland":
                 System.out.println(" ");

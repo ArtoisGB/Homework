@@ -56,16 +56,18 @@ public class Connections {
         String[] toCheck = startPoint;
         String country = "";
         checkStop.remove(positionOnList(removeOne));
+
         for (int i = 0; i < toCheck.length - 1; i++) {
             country = toCheck[i];
-            for (int j = 0; j < checkStop.size() - 1; j++) {
-                String[] middle = checkStop.get(j);
-                if (Arrays.asList(middle).contains(removeTwo)) {
-                    return true;
-                }
+            String[] middle = checkStop.get(i);
+            if (country.equals(namesToCheck.get(i))) {
+
+            }
+            if (Arrays.asList(middle).contains(removeTwo)) {
+                System.out.println("we found direct from" + country);
+                return true;
             }
         }
-        System.out.println("We found fly with stop in" + country);
         return status;
     }
 }

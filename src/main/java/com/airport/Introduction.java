@@ -18,9 +18,8 @@ public class Introduction {
             case "Belgium":
                 System.out.println("Let's check fly to Belgium");
                 System.out.println("We will start from Poland");
-                //Belgium has value 1 and Poland 0
                 connections.getStartPoint(fly, exitPoint);
-
+                
                 break;
             case "Poland":
                 System.out.println(" ");

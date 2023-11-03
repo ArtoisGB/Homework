@@ -4,7 +4,7 @@ public class ExpensiveFly extends Fly {
     private String expFly = "ExpensiveFly";
 
     public ExpensiveFly(int cost, String expFly) {
-        super(cost);
+        super(cost * 2);
         this.expFly = expFly;
     }
 

@@ -9,7 +9,7 @@ public class TypeOfFlight {
             economicFly.introduceMenu();
         }
         if (type.equals(expensiveFly)) {
-            economicFly.introduceMenu();
+            expensiveFly.introduceMenu();
         }
     }
 }

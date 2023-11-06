@@ -24,18 +24,18 @@ public class Connections {
 
 
     public void getStartPoint(String countryStart, String countryExit) {
-        countryArray.addArraysToList();
+        countryArray.addConnectionsToList();
         newList = countryArray.getListConnections();
         namesToCheck = countryArray.getListNames();
         startPoint = newList.get(positionOnList(countryStart));
-        System.out.println("StartPoint has connection to " + Arrays.asList(startPoint));
+        System.out.println(countryStart + " has connection to " + Arrays.asList(startPoint));
         desirePoint = newList.get(positionOnList(countryExit));
-        System.out.println("DesirePoint has connection to " + Arrays.asList(desirePoint));
+        System.out.println(countryExit + " has connection to " + Arrays.asList(desirePoint));
 
 
         if (checkStraightFly(startPoint, countryExit)) {
             System.out.println("We can provide fly to " + countryExit);
-        } else if (checkFlyWithOneStop(countryStart, countryExit)) {
+        } else if (checkFlyWithOneStop(countryExit)) {
             System.out.println("We can provide a fly but with a stop in one country");
         } else {
             System.out.println("We can't provide fly!!");
@@ -50,23 +50,23 @@ public class Connections {
         return status;
     }
 
-    public boolean checkFlyWithOneStop(String removeOne, String removeTwo) {
+    public boolean checkFlyWithOneStop(String removeTwo) {
         boolean status = false;
-        List<String[]> checkStop = newList;
-        String[] toCheck = startPoint;
+        List<String[]> checkStop = newList; //kopia połączeń
+        String[] toCheck = startPoint; //copy array of connection StartPoint
         String country = "";
-        checkStop.remove(positionOnList(removeOne));
+        StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < toCheck.length - 1; i++) {
             country = toCheck[i];
-            String[] middle = checkStop.get(i);
-            if (country.equals(namesToCheck.get(i))) {
-
-            }
+            String[] middle = checkStop.get(positionOnList(country));
             if (Arrays.asList(middle).contains(removeTwo)) {
-                System.out.println("we found direct from" + country);
-                return true;
+                System.out.println("We found fly from " + country + ". It's a stop country on Your travel");
+                sb.append(country + " ");
             }
+        }
+        if (!sb.isEmpty()) {
+            status = true;
         }
         return status;
     }

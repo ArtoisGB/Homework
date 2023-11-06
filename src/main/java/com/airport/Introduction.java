@@ -1,35 +1,30 @@
 package com.airport;
 
 public class Introduction {
+    CountryReader countryReader = new CountryReader();
     final String GREETINGS = "Hello, choose option";
     Connections connections = new Connections();
 
+    // Scanner sc = new Scanner(System.in);
     public void intro() {
-        CountryArray countryArray = new CountryArray();
+        TypeOfFlight typeOfFlight = new TypeOfFlight();
+        Fly flyToSomePlace = new Fly(200);
+        ExpensiveFly expensiveFly = new ExpensiveFly(200, "Name");
 
         System.out.println(GREETINGS);
-        String fly = CountryCode.BELGIUM.codeLabel;
-        String exitPoint = CountryCode.POLAND.codeLabel;
-
-        // Scanner sc = new Scanner(System.in);
-        //  CountryCode cc = CountryCode.valueOf(sc.next());
-        //      switch (cc.codeLabel) {
+        String fly = "I want to fly";
+        //      switch (sc) {
         switch (fly) {
-            case "Belgium":
-                System.out.println("Let's check fly to Belgium");
-                System.out.println("We will start from Poland");
-                connections.getStartPoint(fly, exitPoint);
-                
-                break;
-            case "Poland":
-                System.out.println(" ");
+            case "I want to fly":
+                connections.getStartPoint(countryReader.countryReaderScanner(),
+                        countryReader.countryReaderScanner());
                 break;
             case "Leave":
                 System.out.println("Good day");
                 break;
             default:
-                System.out.println("Please choose a option"); //for now infinity loop
-
+                System.out.println("Please choose a option");
+                intro();
         }
     }
 }

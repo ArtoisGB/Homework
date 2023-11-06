@@ -3,9 +3,9 @@ package com.airport;
 public class EconomicFly extends Fly {
     private String economicFly = "Economic fly";
 
-    public EconomicFly(int cost, String ECONOMIC_FLY) {
+    public EconomicFly(int cost, String economicFly) {
         super(cost);
-        this.economicFly = ECONOMIC_FLY;
+        this.economicFly = economicFly;
     }
 
     public String getEconomicFly() {

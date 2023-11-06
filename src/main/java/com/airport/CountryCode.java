@@ -17,10 +17,4 @@ public enum CountryCode {
         this.codeLabel = codeLabel;
     }
 
-    public String getCodeLabel() {
-        return codeLabel;
-    }
-
-    String[] poland;
-
 }

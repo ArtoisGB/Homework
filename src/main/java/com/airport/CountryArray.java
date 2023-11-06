@@ -10,6 +10,7 @@ public class CountryArray {
     CountryCode[] code = CountryCode.values();
     List<String[]> arrayConnectionCountry = new ArrayList<>();
     List<String> names = new ArrayList<>();
+    Random random = new Random();
 
     public void fillListWithCountryNames() {
         for (int i = 0; i < code.length - 1; i++) {
@@ -17,42 +18,30 @@ public class CountryArray {
         }
     }
 
-    Random random = new Random();
+    public void arrayToList(String[] name) {
+        fillArrayConnection(name);
+        arrayConnectionCountry.add(name);
+    }
 
-    public void addArraysToList() {
+    public void addConnectionsToList() {
         fillListWithCountryNames();
         String[] poland = new String[createRandomSize()];
-        fillArrayConnection(poland);
-        System.out.println("Poland has connection to: " + Arrays.asList(poland));
-        arrayConnectionCountry.add(poland);
+        arrayToList(poland);
         String[] belgium = new String[createRandomSize()];
-        fillArrayConnection(belgium);
-        System.out.println("Belgium has connection to: " + Arrays.asList(belgium));
-        arrayConnectionCountry.add(belgium);
+        arrayToList(belgium);
         String[] germany = new String[createRandomSize()];
-        fillArrayConnection(germany);
-        System.out.println("Germany has connection to: " + Arrays.asList(germany));
-        arrayConnectionCountry.add(germany);
+        arrayToList(germany);
         String[] italy = new String[createRandomSize()];
-        fillArrayConnection(italy);
-        System.out.println("Italy has connection to: " + Arrays.asList(italy));
-        arrayConnectionCountry.add(italy);
+        arrayToList(italy);
         String[] sweden = new String[createRandomSize()];
-        fillArrayConnection(sweden);
-        System.out.println("Sweden has connection to: " + Arrays.asList(sweden));
-        arrayConnectionCountry.add(sweden);
+        arrayToList(sweden);
         String[] england = new String[createRandomSize()];
-        fillArrayConnection(england);
-        System.out.println("England has connection to: " + Arrays.asList(england));
-        arrayConnectionCountry.add(england);
+        arrayToList(england);
         String[] island = new String[createRandomSize()];
-        fillArrayConnection(island);
-        System.out.println("Island has connection to: " + Arrays.asList(island));
-        arrayConnectionCountry.add(island);
+        arrayToList(island);
         String[] austria = new String[createRandomSize()];
-        fillArrayConnection(austria);
-        System.out.println("Austria has connection to: " + Arrays.asList(austria));
-        arrayConnectionCountry.add(austria);
+        arrayToList(austria);
+        print();
     }
 
     public int createRandomSize() {
@@ -73,19 +62,10 @@ public class CountryArray {
         }
     }
 
-  /*  public int fillRandomCountryArray(String[] array, int value) {
-        int randomInt = newRandomValue();
-        String check = code[value].getCodeLabel();
-        if (Arrays.asList(array)
-                .contains(check)) {
-            fillRandomCountryArray(array, randomInt);
-        }
-        return value;
-    }*/
-
     public void print() {
-        for (String[] num : arrayConnectionCountry) {
-            System.out.println(Arrays.toString(num));
+        for (int i = 0; i < arrayConnectionCountry.size() - 1; i++) {
+            System.out.println(names.get(i) + ": " +
+                    Arrays.toString(arrayConnectionCountry.get(i)));
         }
     }
 

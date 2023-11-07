@@ -22,7 +22,6 @@ public class Connections {
         return 0;
     }
 
-
     public void getStartPoint(String countryStart, String countryExit) {
         countryArray.addConnectionsToList();
         newList = countryArray.getListConnections();
@@ -31,7 +30,6 @@ public class Connections {
         System.out.println(countryStart + " has connection to " + Arrays.asList(startPoint));
         desirePoint = newList.get(positionOnList(countryExit));
         System.out.println(countryExit + " has connection to " + Arrays.asList(desirePoint));
-
 
         if (checkStraightFly(startPoint, countryExit)) {
             System.out.println("We can provide fly to " + countryExit);
@@ -52,12 +50,12 @@ public class Connections {
 
     public boolean checkFlyWithOneStop(String removeTwo) {
         boolean status = false;
-        List<String[]> checkStop = newList; //kopia połączeń
+        List<String[]> checkStop = newList;
         String[] toCheck = startPoint; //copy array of connection StartPoint
         String country = "";
         StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < toCheck.length - 1; i++) {
+        for (int i = 0; i < toCheck.length; i++) {
             country = toCheck[i];
             String[] middle = checkStop.get(positionOnList(country));
             if (Arrays.asList(middle).contains(removeTwo)) {

@@ -1,24 +1,33 @@
 package com.airport;
 
-public class EconomicFly extends Fly {
-    private String economicFly = "Economic fly";
-
-    public EconomicFly(int cost, String economicFly) {
-        super(cost);
-        this.economicFly = economicFly;
-    }
-
-    public String getEconomicFly() {
-        return economicFly;
-    }
-
-    public void setEconomicFly(String economicFly) {
-        this.economicFly = economicFly;
+public class EconomicFly extends Fly implements Menu {
+    public EconomicFly(int cost, String startFly, String endFly) {
+        super(cost, startFly, endFly);
     }
 
     @Override
     public void introduceMenu() {
-        super.introduceMenu();
-        System.out.println("Dinner and tea");
+        System.out.println("During a fly we provide a dinner and tea");
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
+    public void buyAlcohol() {
+        System.out.println("In economic class we dont have any alkohol in our menu");
+    }
+
 }

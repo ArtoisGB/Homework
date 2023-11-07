@@ -36,10 +36,9 @@ public class FirstClassFly extends Fly implements Menu {
 
     @Override
     public String toString() {
-        return "FirstClassFly{" +
-                "cost=" + cost +
-                ", startFly='" + startFly + '\'' +
-                ", endFly='" + endFly + '\'' +
-                '}';
+        return "You will fly in First class and it will " +
+                "cost(EUR):" + cost +
+                ", Your fly will start in:'" + startFly + '\'' +
+                ", and end in:'" + endFly;
     }
 }

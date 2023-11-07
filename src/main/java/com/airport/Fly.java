@@ -38,7 +38,7 @@ public abstract class Fly implements Menu {
         this.endFly = endFly;
     }
 
-    public abstract void introduceMenu();
+    protected abstract void introduceMenu();
 
 
 }

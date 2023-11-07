@@ -2,11 +2,11 @@ package com.airport;
 
 public class FirstClassFly extends Fly implements Menu {
 
-    public FirstClassFly(int cost, String startFly, String endFly) {
+    protected FirstClassFly(int cost, String startFly, String endFly) {
         super(cost, startFly, endFly);
     }
 
-    public FirstClassFly() {
+    protected FirstClassFly() {
     }
 
     @Override
@@ -15,7 +15,7 @@ public class FirstClassFly extends Fly implements Menu {
     }
 
     @Override
-    public void introduceMenu() {
+    protected void introduceMenu() {
         System.out.println("During a fly we provide big size dinner also to choose tea or coffee and snacks");
     }
 

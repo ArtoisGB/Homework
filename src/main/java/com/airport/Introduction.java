@@ -1,30 +1,40 @@
 package com.airport;
 
 public class Introduction {
-    CountryReader countryReader = new CountryReader();
-    final String GREETINGS = "Hello, choose option";
     Connections connections = new Connections();
+    TypeOfFlight typeOfFlight = new TypeOfFlight();
 
-    // Scanner sc = new Scanner(System.in);
     public void intro() {
-        TypeOfFlight typeOfFlight = new TypeOfFlight();
-        Fly flyToSomePlace = new Fly(200);
-        ExpensiveFly expensiveFly = new ExpensiveFly(200, "Name");
+        System.out.println(TextToPrint.CHOOSE); //First class or Economic class
+        String type = "First class";
+        //String type = countryReader.countryReaderScanner(); //First class or Economic class
+        String startPoint, endPoint;
+        String letsFly = "I want to fly";
 
-        System.out.println(GREETINGS);
-        String fly = "I want to fly";
-        //      switch (sc) {
-        switch (fly) {
-            case "I want to fly":
-                connections.getStartPoint(countryReader.countryReaderScanner(),
-                        countryReader.countryReaderScanner());
-                break;
-            case "Leave":
-                System.out.println("Good day");
-                break;
-            default:
+        // switch (countryReader.countryReaderScanner()) {
+        switch (letsFly) {
+            case "I want to fly" -> {
+                System.out.println(TextToPrint.GREETINGS);
+                //startPoint = countryReader.countryReaderScanner(); endPoint = countryReader.countryReaderScanner();
+                //connections.getStartPoint(startPoint,endPoint);
+                connections.getStartPoint("Poland", "Sweden");
+                Fly fly = typeOfFlight.createTicket(type, "Poland", "Sweden", 200);
+                //Fly fly = typeOfFlight.createTicket(type, startPoint, endPoint, 200);
+                System.out.println("To summary your fly will be to: " + fly.getEndFly() + ",from: " + fly.getStartFly() + "\n and it will cost: " + fly.getCost());
+                fly.introduceMenu();
+                fly.buyAlcohol();
+                if (fly instanceof FirstClassFly) {  // to confirm fly is first class fly
+                    System.out.println(type);
+                }
+                if (fly instanceof EconomicFly) {
+                    System.out.println(type);
+                }
+            }
+            case "Leave" -> System.out.println("Good day");
+            default -> {
                 System.out.println("Please choose a option");
                 intro();
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ public class Introduction {
                 connections.getStartPoint("Poland", "Sweden");
                 Fly fly = typeOfFlight.createTicket(type, "Poland", "Sweden", 200);
                 //Fly fly = typeOfFlight.createTicket(type, startPoint, endPoint, 200);
-                System.out.println("To summary your fly will be to: " + fly.getEndFly() + ",from: " + fly.getStartFly() + "\n and it will cost: " + fly.getCost());
+                System.out.println(fly);
                 fly.introduceMenu();
                 fly.buyAlcohol();
                 if (fly instanceof FirstClassFly) {  // to confirm fly is first class fly

@@ -40,5 +40,12 @@ public abstract class Fly implements Menu {
 
     protected abstract void introduceMenu();
 
-
+    @Override
+    public String toString() {
+        return "Fly{" +
+                "cost=" + cost +
+                ", startFly='" + startFly + '\'' +
+                ", endFly='" + endFly + '\'' +
+                '}';
+    }
 }

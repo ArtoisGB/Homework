@@ -11,6 +11,11 @@ public class EconomicFly extends Fly implements Menu {
     }
 
     @Override
+    public void buyAlcohol() {
+        System.out.println("In economic class we dont have any alkohol in our menu");
+    }
+
+    @Override
     public int hashCode() {
         return super.hashCode();
     }
@@ -22,12 +27,10 @@ public class EconomicFly extends Fly implements Menu {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "EconomicFly{" +
+                "cost=" + cost +
+                ", startFly='" + startFly + '\'' +
+                ", endFly='" + endFly + '\'' +
+                '}';
     }
-
-    @Override
-    public void buyAlcohol() {
-        System.out.println("In economic class we dont have any alkohol in our menu");
-    }
-
 }

@@ -1,12 +1,12 @@
 package com.airport;
 
 public class EconomicFly extends Fly implements Menu {
-    public EconomicFly(int cost, String startFly, String endFly) {
+    protected EconomicFly(int cost, String startFly, String endFly) {
         super(cost, startFly, endFly);
     }
 
     @Override
-    public void introduceMenu() {
+    protected void introduceMenu() {
         System.out.println("During a fly we provide a dinner and tea");
     }
 

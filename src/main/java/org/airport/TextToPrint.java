@@ -1,4 +1,4 @@
-package com.airport;
+package org.airport;
 
 public enum TextToPrint {
 

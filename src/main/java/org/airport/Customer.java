@@ -1,4 +1,4 @@
-package com.airport;
+package org.airport;
 
 public class Customer {
     private final String FIRST_NAME;

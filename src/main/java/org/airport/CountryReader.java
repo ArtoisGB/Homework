@@ -1,10 +1,10 @@
-package com.airport;
+package org.airport;
 
-import com.airport.interfaces.IReader;
+import org.airport.interfaces.IReader;
 
 import java.util.Scanner;
 
-public class CountryReader implements IReader {
+public final class CountryReader implements IReader {
     protected Scanner sc = new Scanner(System.in);
 
     @Override

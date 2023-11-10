@@ -1,4 +1,4 @@
-package com.airport.interfaces;
+package org.airport.interfaces;
 
 public interface IReader {
     String countryReaderScanner();

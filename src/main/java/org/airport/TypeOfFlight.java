@@ -1,4 +1,4 @@
-package com.airport;
+package org.airport;
 
 public class TypeOfFlight {
     public Fly createTicket(String type, String sPoint, String ePoint, int cost) {

@@ -1,9 +1,9 @@
-package com.airport;
+package org.airport;
 
-import com.airport.interfaces.IMenu;
+import org.airport.interfaces.IMenu;
 
 public class EconomicFly extends Fly implements IMenu {
-    protected EconomicFly(int cost, String startFly, String endFly) {
+    public EconomicFly(int cost, String startFly, String endFly) {
         super(cost, startFly, endFly);
     }
 

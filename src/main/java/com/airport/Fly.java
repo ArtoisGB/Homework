@@ -1,8 +1,8 @@
 package com.airport;
 
-import com.airport.interfaces.Menu;
+import com.airport.interfaces.IMenu;
 
-public abstract class Fly implements Menu {
+public abstract class Fly implements IMenu {
     protected int cost;
     protected String startFly;
     protected String endFly;

@@ -1,14 +1,14 @@
-package com.airport;
+package org.airport;
 
-import com.airport.interfaces.IMenu;
+import org.airport.interfaces.IMenu;
 
 public class FirstClassFly extends Fly implements IMenu {
 
-    protected FirstClassFly(int cost, String startFly, String endFly) {
+    public FirstClassFly(int cost, String startFly, String endFly) {
         super(cost, startFly, endFly);
     }
 
-    protected FirstClassFly() {
+    public FirstClassFly() {
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.airport.interfaces;
+package org.airport.interfaces;
 
 public interface IMenu {
     default void buyAlcohol() {

@@ -1,13 +1,13 @@
-package com.airport;
+package org.airport;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class CountryArray extends Base {
-    CountryCode[] code = CountryCode.values();
-    List<String[]> arrayConnectionCountry = new ArrayList<>();
-    List<String> names = new ArrayList<>();
+    private CountryCode[] code = CountryCode.values();
+    private List<String[]> arrayConnectionCountry = new ArrayList<>();
+    private List<String> names = new ArrayList<>();
 
 
     public void fillListWithCountryNames() {

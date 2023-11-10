@@ -1,6 +1,6 @@
-package com.airport;
+package org.airport;
 
-import com.airport.interfaces.IMenu;
+import org.airport.interfaces.IMenu;
 
 public abstract class Fly implements IMenu {
     protected int cost;

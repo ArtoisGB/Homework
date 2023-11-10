@@ -3,18 +3,16 @@ package com.airport;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
-
-public class CountryArray {
+public class CountryArray extends Base {
     CountryCode[] code = CountryCode.values();
     List<String[]> arrayConnectionCountry = new ArrayList<>();
     List<String> names = new ArrayList<>();
-    Random random = new Random();
+
 
     public void fillListWithCountryNames() {
         for (int i = 0; i < code.length - 1; i++) {
-            names.add(code[i].codeLabel);
+            names.add(code[i].CODE_LABEL);
         }
     }
 

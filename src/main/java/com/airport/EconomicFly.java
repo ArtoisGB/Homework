@@ -1,5 +1,7 @@
 package com.airport;
 
+import com.airport.interfaces.Menu;
+
 public class EconomicFly extends Fly implements Menu {
     protected EconomicFly(int cost, String startFly, String endFly) {
         super(cost, startFly, endFly);

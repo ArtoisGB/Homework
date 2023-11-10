@@ -1,6 +1,6 @@
 package com.airport.interfaces;
 
-public interface Reader {
+public interface IReader {
     String countryReaderScanner();
 
 }

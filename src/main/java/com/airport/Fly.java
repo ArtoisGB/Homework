@@ -1,5 +1,7 @@
 package com.airport;
 
+import com.airport.interfaces.Menu;
+
 public abstract class Fly implements Menu {
     protected int cost;
     protected String startFly;
@@ -47,5 +49,15 @@ public abstract class Fly implements Menu {
                 ", startFly='" + startFly + '\'' +
                 ", endFly='" + endFly + '\'' +
                 '}';
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }

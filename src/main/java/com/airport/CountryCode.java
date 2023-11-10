@@ -10,10 +10,10 @@ public enum CountryCode {
     ISLAND("Island"),
     AUSTRIA("Austria");
 
-    public final String codeLabel;
+    public final String CODE_LABEL;
 
     private CountryCode(String codeLabel) {
-        this.codeLabel = codeLabel;
+        this.CODE_LABEL = codeLabel;
     }
 
 }

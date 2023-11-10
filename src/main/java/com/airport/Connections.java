@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Connections {
     static CountryArray countryArray = new CountryArray();
-    static List<String[]> newList = new ArrayList<>();
-    static List<String> namesToCheck = new ArrayList<>();
+    List<String[]> newList = new ArrayList<>();
+    List<String> namesToCheck = new ArrayList<>();
     String[] startPoint;
     String[] desirePoint;
     String[] middlePoint;

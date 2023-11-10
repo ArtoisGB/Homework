@@ -1,11 +1,14 @@
 package com.airport;
 
+import com.airport.interfaces.Reader;
+
 import java.util.Scanner;
 
-public class CountryReader {
+public class CountryReader implements Reader {
     protected Scanner sc = new Scanner(System.in);
 
-    protected String countryReaderScanner() {
+    @Override
+    public String countryReaderScanner() {
         String country = sc.nextLine();
         return country;
     }

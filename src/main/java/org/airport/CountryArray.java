@@ -5,13 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CountryArray extends Base {
-    private CountryCode[] code = CountryCode.values();
-    private List<String[]> arrayConnectionCountry = new ArrayList<>();
-    private List<String> names = new ArrayList<>();
-
+    static CountryCode[] code = CountryCode.values();
+    static List<String[]> arrayConnectionCountry = new ArrayList<>();
+    static List<String> names = new ArrayList<>();
 
     public void fillListWithCountryNames() {
-        for (int i = 0; i < code.length - 1; i++) {
+        for (int i = 0; i < code.length; i++) {
             names.add(code[i].CODE_LABEL);
         }
     }
@@ -51,8 +50,7 @@ public class CountryArray extends Base {
     }
 
     public void fillArrayConnection(String[] temp) {
-        List<String> tempNames = new ArrayList<>();
-        tempNames.addAll(names);
+        List<String> tempNames = new ArrayList<>(names);
         for (int i = 0; i < temp.length; i++) {
             int randomCountry = random.nextInt(tempNames.size());
             temp[i] = tempNames.get(randomCountry);
@@ -61,7 +59,7 @@ public class CountryArray extends Base {
     }
 
     public void print() {
-        for (int i = 0; i < arrayConnectionCountry.size() - 1; i++) {
+        for (int i = 0; i < arrayConnectionCountry.size(); i++) {
             System.out.println(names.get(i) + ": " +
                     Arrays.toString(arrayConnectionCountry.get(i)));
         }
@@ -74,5 +72,4 @@ public class CountryArray extends Base {
     public List<String> getListNames() {
         return names;
     }
-
 }

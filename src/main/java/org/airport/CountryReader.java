@@ -5,7 +5,7 @@ import org.airport.interfaces.IReader;
 import java.util.Scanner;
 
 public final class CountryReader implements IReader {
-    protected Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
 
     @Override
     public String countryReaderScanner() {

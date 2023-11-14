@@ -5,6 +5,11 @@ import org.airport.interfaces.IMenu;
 public class EconomicFly extends Fly implements IMenu {
     public EconomicFly(int cost, String startFly, String endFly) {
         super(cost, startFly, endFly);
+        int ID = this.ID;
+    }
+
+    public int getID() {
+        return ID;
     }
 
     @Override
@@ -29,10 +34,10 @@ public class EconomicFly extends Fly implements IMenu {
 
     @Override
     public String toString() {
-        return "EconomicFly{" +
+        return "EconomicFly{" + ",idTicket=" + ID +
                 "cost=" + cost +
                 ", startFly='" + startFly + '\'' +
                 ", endFly='" + endFly + '\'' +
-                '}';
+                "}\n";
     }
 }

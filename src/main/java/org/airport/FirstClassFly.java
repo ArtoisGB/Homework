@@ -3,12 +3,13 @@ package org.airport;
 import org.airport.interfaces.IMenu;
 
 public class FirstClassFly extends Fly implements IMenu {
-
     public FirstClassFly(int cost, String startFly, String endFly) {
         super(cost, startFly, endFly);
+        int ID = this.ID;
     }
 
-    public FirstClassFly() {
+    public int getID() {
+        return ID;
     }
 
     @Override
@@ -39,8 +40,9 @@ public class FirstClassFly extends Fly implements IMenu {
     @Override
     public String toString() {
         return "You will fly in First class and it will " +
-                "cost(EUR):" + cost +
+                "id ticket: " + ID +
+                " cost(EUR):" + cost +
                 ", Your fly will start in:'" + startFly + '\'' +
-                ", and end in:'" + endFly;
+                ", and end in:'" + endFly + "'\n";
     }
 }

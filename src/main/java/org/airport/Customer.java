@@ -6,7 +6,6 @@ public class Customer {
     private final int ID;
     private static int idCounter = 0; //to create immutable autoincrement id
 
-
     public Customer(String firstName, String lastName) {
         this.FIRST_NAME = firstName;
         this.LAST_NAME = lastName;

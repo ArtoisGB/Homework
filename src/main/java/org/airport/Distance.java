@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Distance extends Base {
-    private static Map<String, String[]> mapConnection = new HashMap<>();
-    private static Map<String, Integer[]> distanceConnection = new HashMap<>();
+    private Map<String, String[]> mapConnection = new HashMap<>();
+    private Map<String, Integer[]> distanceConnection = new HashMap<>();
     private CountryArray countryArray = new CountryArray();
     private List<String> stringList = countryArray.getListNames();
     private List<String[]> connectionList = countryArray.getListConnections();
@@ -27,6 +27,7 @@ public class Distance extends Base {
                 km = distanceValue[i];
             }
         }
+
         return km;
     }
 

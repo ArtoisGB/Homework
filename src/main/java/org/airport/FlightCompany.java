@@ -39,16 +39,21 @@ public class FlightCompany extends Base {
         }
     }
 
-    public void detailsFly() {
+    public void detailsFly() { //exception nullpointerexception
         fly.introduceMenu();
         fly.buyAlcohol();
     }
 
-    public void showTickets() {
+    public void showTickets(Customer customer) {
         if (!tickets.isEmpty()) {
+            assignCustomerToTicket(customer);
             System.out.println(Arrays.asList(tickets.toArray()));
         } else {
-            System.out.println("we cannot provide fly");
+            System.out.println("We cannot provide fly");
         }
+    }
+
+    public void assignCustomerToTicket(Customer customer) {
+        customerTickets.put(customer, tickets);
     }
 }

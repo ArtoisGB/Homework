@@ -11,12 +11,15 @@ public class Introduction extends Base {
         String letsFly = "I want to fly";//countryReader.countryReaderScanner();
         switch (letsFly) {              //(countryReader.countryReaderScanner())
             case "I want to fly" -> {
-                System.out.println(TextToPrint.GREETINGS.printLabel);
+                LOGGER.error("lol");
+                LOGGER.debug("lol2");
+                LOGGER.info("lol3");
+                LOGGER.fatal("lol4");
                 String startPoint = "Poland";//countryReader.countryReaderScanner();
                 String endPoint = "Sweden";//countryReader.countryReaderScanner();
                 flightCompany.ticket(type, startPoint, endPoint);
-                System.out.println("Please choose a ticket: ");
-                flightCompany.showTickets();
+                LOGGER.error("Please choose a ticket: ");
+                flightCompany.showTickets(customer);
                 flightCompany.detailsFly();
             }
             case "Leave" -> System.out.println("Good day");

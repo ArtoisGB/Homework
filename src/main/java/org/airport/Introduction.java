@@ -15,6 +15,7 @@ public class Introduction extends Base {
                 String startPoint = "Poland";//countryReader.countryReaderScanner();
                 String endPoint = "Sweden";//countryReader.countryReaderScanner();
                 flightCompany.ticket(type, startPoint, endPoint);
+                System.out.println("Please choose a ticket: ");
                 flightCompany.showTickets();
                 flightCompany.detailsFly();
             }

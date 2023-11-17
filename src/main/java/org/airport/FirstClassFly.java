@@ -39,10 +39,10 @@ public class FirstClassFly extends Fly implements IMenu {
 
     @Override
     public String toString() {
-        return "You will fly in First class, " +
-                "id ticket is: " + ID +
+        return "\nYou will fly in First class, " +
+                "ID ticket is: " + ID +
                 " it will cost(EUR):" + cost +
-                ", Your fly will start in:'" + startFly + '\'' +
-                ", and end in:'" + endFly + "'\n";
+                ", Your fly will start in: " + startFly +
+                ", and end in: " + endFly;
     }
 }

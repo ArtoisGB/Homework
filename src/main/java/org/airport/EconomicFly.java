@@ -34,7 +34,7 @@ public class EconomicFly extends Fly implements IMenu {
 
     @Override
     public String toString() {
-        return "EconomicFly{" + ",idTicket=" + ID +
+        return "EconomicFly{" + ",IDTicket=" + ID +
                 "cost=" + cost +
                 ", startFly='" + startFly + '\'' +
                 ", endFly='" + endFly + '\'' +

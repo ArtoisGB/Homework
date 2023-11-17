@@ -1,50 +1,57 @@
 package org.airport;
 
 import org.airport.interfaces.IFlights;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Connections implements IFlights {
-    static CountryArray countryArray = new CountryArray();
-    private List<String[]> newList = new ArrayList<>();
-    private List<String> namesToCheck = new ArrayList<>();
+    protected static final Logger LOGGER = LogManager.getLogger(Connections.class);
+    private static CountryArray countryArray = new CountryArray();
+    private static List<String[]> newList;
+    private static List<String> namesToCheck;
     private String[] startPoint;
     private String[] desirePoint;
     private CountryCode[] code = CountryCode.values();
     private String[] stopCountries;
 
     public int positionOnList(String value) {
+        int position = 0;
         for (int i = 0; i < code.length; i++) {
             if (namesToCheck.get(i).equals(value)) {
-                return i;
+                position = i;
             }
         }
-        return 0;
+        return position;
     }
 
-    public void getStartPoint(String countryStart, String countryExit) {
+    static {
         countryArray.addConnectionsToList();
         newList = countryArray.getListConnections();
         namesToCheck = countryArray.getListNames();
+    }
+
+    public void getStartPoint(String countryStart, String countryExit) {
+
         startPoint = newList.get(positionOnList(countryStart));
-        System.out.println(countryStart + " has connection to " + Arrays.asList(startPoint));
+        LOGGER.info(countryStart + " has connection to " + Arrays.asList(startPoint));
         desirePoint = newList.get(positionOnList(countryExit));
-        System.out.println(countryExit + " has connection to " + Arrays.asList(desirePoint));
+        LOGGER.info(countryExit + " has connection to " + Arrays.asList(startPoint));
     }
 
     @Override
     public boolean provideFly(String countryStart, String countryExit) {
         boolean statusFly = false;
         if (checkStraightFly(startPoint, countryExit)) {
-            System.out.println("We can provide fly to " + countryExit);
+            LOGGER.info("We can provide fly to " + countryExit);
             statusFly = true;
         }
         return statusFly;
     }
 
-
+    @Override
     public boolean checkStraightFly(String[] country, String countryExit) {
         boolean status = false;
         if (Arrays.asList(country).contains(countryExit)) {
@@ -68,7 +75,7 @@ public class Connections implements IFlights {
             }
             String[] middle = checkStop.get(positionOnList(country));
             if (Arrays.asList(middle).contains(countryExit)) {
-                System.out.println("We found fly from " + country + ". It's a stop country on Your travel");
+                LOGGER.info("We found fly from " + country + ". It's a stop country on Your travel");
                 sb.append(country + " ");
             }
         }
@@ -84,5 +91,4 @@ public class Connections implements IFlights {
     public String[] getStopArray() {
         return stopCountries;
     }
-
 }

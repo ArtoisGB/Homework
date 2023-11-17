@@ -5,18 +5,22 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CountryArray extends Base {
-    static CountryCode[] code = CountryCode.values();
-    static List<String[]> arrayConnectionCountry = new ArrayList<>();
-    static List<String> names = new ArrayList<>();
+    private static CountryCode[] code = CountryCode.values();
+    private static List<String[]> arrayConnectionCountry = new ArrayList<>();
+    private static List<String> names = new ArrayList<>();
 
     public void fillListWithCountryNames() {
-        for (int i = 0; i < code.length; i++) {
-            names.add(code[i].CODE_LABEL);
+        for (CountryCode countryCode : code) {
+            names.add(countryCode.CODE_LABEL);
         }
     }
 
     public void arrayToList(String[] name) {
-        fillArrayConnection(name);
+        try {
+            fillArrayConnection(name);
+        } catch (NullPointerException e) {
+            LOGGER.error(TextToPrint.NULL_ERROR.printLabel);
+        }
         arrayConnectionCountry.add(name);
     }
 
@@ -60,7 +64,7 @@ public class CountryArray extends Base {
 
     public void print() {
         for (int i = 0; i < arrayConnectionCountry.size(); i++) {
-            System.out.println(names.get(i) + ": " +
+            LOGGER.info(names.get(i) + ": " +
                     Arrays.toString(arrayConnectionCountry.get(i)));
         }
     }

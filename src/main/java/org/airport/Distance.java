@@ -11,6 +11,7 @@ public class Distance extends Base {
     private List<String> stringList = countryArray.getListNames();
     private List<String[]> connectionList = countryArray.getListConnections();
 
+
     public void distanceConnection() { //
         for (int i = 0; i < connectionList.size(); i++) {
             mapConnection.put(stringList.get(i), connectionList.get(i));

@@ -1,6 +1,5 @@
 package org.airport.interfaces;
 
 public interface IReader {
-    String countryReaderScanner();
-
+    String typeFlightScanner();
 }

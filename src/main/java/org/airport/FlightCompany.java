@@ -48,7 +48,7 @@ public class FlightCompany extends Base implements ICompany {
         }
     }
 
-    public void detailsFly() {
+    public final void detailsFly() {
         try {
             fly.introduceMenu();
             fly.buyAlcohol();

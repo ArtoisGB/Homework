@@ -7,7 +7,7 @@ public abstract class Fly implements IMenu {
     protected String startFly;
     protected String endFly;
     protected final int ID;
-    protected static int idCounter = 0;
+    private static int idCounter = 0;
 
     public Fly(int cost, String startFly, String endFly) {
         this.cost = cost;

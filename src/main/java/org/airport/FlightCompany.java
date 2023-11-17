@@ -12,7 +12,7 @@ public class FlightCompany extends Base implements ICompany {
     private List<Fly> tickets = new ArrayList<>();
     private Fly fly;
     private Distance distance = new Distance();
-    static String[] countriesStop;
+    private static String[] countriesStop;
 
     @Override
     public int calculateStraightDistance(String countryStart, String countryExit) {

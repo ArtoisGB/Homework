@@ -1,15 +1,18 @@
 package org.airport;
 
+import org.airport.customlist.CustomLinkedList;
 import org.airport.exceptions.EmptyListException;
 import org.airport.exceptions.TicketCreationException;
 import org.airport.exceptions.WrongCalculationException;
 import org.airport.interfaces.ICompany;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FlightCompany extends Base implements ICompany {
-    private Map<Customer, List<Fly>> customerTickets = new HashMap<>();
-    private List<Fly> tickets = new ArrayList<>();
+    private Map<Customer, CustomLinkedList<Fly>> customerTickets = new HashMap<>();
+    private CustomLinkedList<Fly> ticketList = new CustomLinkedList<>();
     private Fly fly;
     private Distance distance = new Distance();
     private static String[] countriesStop;
@@ -28,7 +31,7 @@ public class FlightCompany extends Base implements ICompany {
             }
             km += calculateStraightDistance(stopCountries[i], countryExit);
             fly = typeOfFlight.createTicket(type, countryStart, countryExit, km);
-            tickets.add(fly);
+            ticketList.add(fly);
             km = distanceToExit;
         }
     }
@@ -40,7 +43,7 @@ public class FlightCompany extends Base implements ICompany {
         if (connections.provideFly(startCountry, exitCountry)) {
             distanceToExitCountry = calculateStraightDistance(startCountry, exitCountry);
             fly = typeOfFlight.createTicket(type, startCountry, exitCountry, distanceToExitCountry);
-            tickets.add(fly);
+            ticketList.add(fly);
         }
         if (connections.checkFlyWithOneStop(startCountry, exitCountry)) {
             countriesStop = connections.getStopArray();
@@ -58,17 +61,17 @@ public class FlightCompany extends Base implements ICompany {
     }
 
     public void showTickets(Customer customer) throws EmptyListException {
-        if (tickets.isEmpty()) {
+        if (ticketList.isEmpty()) {
             LOGGER.info("We cannot provide fly");
             throw new EmptyListException();
         }
-        if (!tickets.isEmpty()) {
+        if (!ticketList.isEmpty()) {
             assignCustomerToTicket(customer);
-            LOGGER.info(Arrays.asList(tickets.toArray()));
+            LOGGER.info(Arrays.asList(ticketList.toString()));
         }
     }
 
     public void assignCustomerToTicket(Customer customer) {
-        customerTickets.put(customer, tickets);
+        customerTickets.put(customer, ticketList);
     }
 }
